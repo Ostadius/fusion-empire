@@ -1,3 +1,7 @@
+export const SET_ATTRIBUTES = 'SET_ATTRIBUTES';
+export const FETCH_CHARACTER_FAILED = 'FETCH_CHARACTER_FAILED';
+
+
 export const AUTH_START = 'AUTH_START';
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const AUTH_FAIL = 'AUTH_FAIL';

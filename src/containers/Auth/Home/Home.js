@@ -11,26 +11,7 @@ class Home extends Component{
     loading:true,
     chars:[]
   }
-  componentDidMount(){
-    axios.get('/characters.json')
-    .then( res=>{
-      const fetchedChar =[];
-      for(let key in res.data)
-        fetchedChar.push({
-          ...res.data[key],
-          id:key
-        })
-        this.setState({loading:false, chars:fetchedChar});
-        console.log(fetchedChar);
-    }
-
-  )
-  .catch(err=>{
-    console.log(err);
-    this.setState({loading:false})
-  }
-
-  )}
+  
   inputChangeHandler=(event)=>{
     console.log(event.target.value);
 

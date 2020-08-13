@@ -7,7 +7,7 @@ import axios from '../../axios-orders';
 class CharPage extends Component{
   state ={
     chars:[],
-    loading:false,
+    loading:true,
     stats:{
 
     }
@@ -32,10 +32,13 @@ class CharPage extends Component{
     this.setState({loading:false})
   }
 
-  )}
+);
+console.log(this.state.chars);
+}
   render(){
     return(
       <Fragment>
+      <a> HAJ HAJ</a>
       {this.state.chars.map(char=>(
         <div key ={char.id}>
         <CharMiniView

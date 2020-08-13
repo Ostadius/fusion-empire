@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-        baseURL:'https://adventure-app-29076.firebaseio.com/'
+        baseURL:'https://fusion-empire.firebaseio.com/'
 });
 
 export default instance;
