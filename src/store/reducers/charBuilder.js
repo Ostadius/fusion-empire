@@ -4,7 +4,7 @@ import { updateObject } from '../utility';
 const initialState = {
     character: null,
     error:"VAHBAHSBHABH",
-    // loading:true,
+    loading:false,
 };
 
 

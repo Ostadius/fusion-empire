@@ -2,12 +2,14 @@
   margin: 20px auto;
   width: 80%;
   text-align: center;
-  box-shadow: 0 3px #ccc;
+  box-shadow:  3px #ccc;
   padding: 10px;
   box-sizing: border-box;
 
 }
-
+.form{
+  text-align: center;
+}
 .authImg{
 width: 50%;
 

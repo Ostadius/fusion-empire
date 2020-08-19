@@ -9,12 +9,15 @@ import thunk from 'redux-thunk';
 import * as serviceWorker from './serviceWorker';
 import authReducer from './store/reducers/auth';
 import charBuilderReducer from './store/reducers/charBuilder';
+import charPageReducer from './store/reducers/charPage';
+
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  charBuilder: charBuilderReducer
+  charBuilder: charBuilderReducer,
+  charPage: charPageReducer
 
 });
 

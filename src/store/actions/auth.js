@@ -46,9 +46,9 @@ export const auth = (email, password, isSignup) => {
           returnSecureToken: true
         };
         console.log(authData);
-        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBlKcN213oe9b0W7ssrM1v10BkRYjROLoc';
+        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCFMJel7d_aNDDOgw7rzetMPvzaEs81m1g';
         if(!isSignup){
-          url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBlKcN213oe9b0W7ssrM1v10BkRYjROLoc'
+          url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCFMJel7d_aNDDOgw7rzetMPvzaEs81m1g'
         }
         axios.post(url, authData)
         .then(response => {
@@ -59,6 +59,8 @@ export const auth = (email, password, isSignup) => {
         .catch(err => {
             dispatch(authFail(err.response.data.error))
         });
+// G2y7jjmtHlexvhJuqCXBdjQVNHM2
+// G2y7jjmtHlexvhJuqCXBdjQVNHM2
 
     };
 };

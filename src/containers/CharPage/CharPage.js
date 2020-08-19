@@ -1,57 +1,64 @@
 import React, {Fragment, Component} from 'react';
 import CharMiniView from '../../components/CharView/CharMiniView/CharMiniView';
+import Spinner from '../../components/UI/Spinner/Spinner';
+import { connect } from 'react-redux';
+import * as actions from '../../store/actions/index';
+
+
 import axios from '../../axios-orders';
 
 
 
 class CharPage extends Component{
   state ={
-    chars:[],
-    loading:true,
-    stats:{
 
-    }
+    stats:{}
 
   }
   componentDidMount(){
-    axios.get('/characters.json')
-    .then( res=>{
-      const fetchedChar =[];
-      for(let key in res.data)
-        fetchedChar.push({
-          ...res.data[key],
-          id:key
-        })
-        this.setState({loading:false, chars:fetchedChar});
-        console.log(fetchedChar);
-    }
-
-  )
-  .catch(err=>{
-    console.log(err);
-    this.setState({loading:false})
-  }
-
-);
-console.log(this.state.chars);
+    this.props.onFetchCharacters(this.props.token)
+    console.log(this.props.loading);
 }
   render(){
+    let fetchedCharView = <Spinner />
+    console.log(this.props.chars.id);
+    if(!this.props.loading){
+      console.log(this.props.chars);
+      fetchedCharView = this.props.chars.map(char =>(
+        <CharMiniView
+        key={char.id}
+        exElement={char.exElement}
+        name={char.name}
+        race={char.race}
+        moon={char.moon}
+        job={char.job}
+        gender={char.gender}
+         />
+
+       ))
+
+    }
     return(
       <Fragment>
       <a> HAJ HAJ</a>
-      {this.state.chars.map(char=>(
-        <div key ={char.id}>
-        <CharMiniView
-        id={char.id}
-        class={char.currentClass}
-        />
+      {fetchedCharView}
 
-        </div>
-      ))}
 
       </Fragment>
     );
   }
 }
+const mapStateToProps = state => {
+    return {
+        chars:  state.charPage.chars,
+        token: state.auth.token,
+        loading: state.charPage.loading
+    };
+}
+const mapDispatchToProps = dispatch => {
+    return {
+      onFetchCharacters: (token) => dispatch(actions.fetchCharacters(token))
+    }
+}
 
-export default CharPage;
+export default connect(mapStateToProps, mapDispatchToProps)(CharPage, axios);

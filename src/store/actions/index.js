@@ -6,3 +6,8 @@ export {
     setAttributes,
     fetchCharacterFailed
 } from './charBuilder';
+export {
+  fetchCharactersFailed,
+  fetchCharacters,
+  fetchCharactersStart
+} from './charPage';

@@ -16,9 +16,9 @@ export const fetchCharacterFailed = () => {
     };
 };
 
-export const initCharacter = () => {
+export const initCharacter = (token) => {
     return dispatch => {
-        axios.get( 'https://fusion-empire.firebaseio.com/character.json' )
+        axios.get( '/character.json?auth=' + token )
             .then( response => {
               console.log(response.data);
                 console.log('blekh');

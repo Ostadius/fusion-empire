@@ -14,8 +14,8 @@ class CharBuilder extends Component {
   }
 
   componentDidMount () {
-      this.props.onInitCharacter();
-      console.log(this.props.error);
+      this.props.onInitCharacter(this.props.token);
+      console.log(this.props.char);
   }
 
 
@@ -32,7 +32,7 @@ class CharBuilder extends Component {
     }
     return (
       <div>
-      <a> {gender} </a>
+      <p> {gender} </p>
       </div>
     );
   }
@@ -41,13 +41,14 @@ class CharBuilder extends Component {
 const mapStateToProps = state => {
     return {
         charAtt: state.charBuilder.character,
-        error: state.charBuilder.error
+        error: state.charBuilder.error,
+        token: state.auth.token
     };
 }
 const mapDispatchToProps = dispatch => {
     return {
       onSetAttributes: () => dispatch(actions.setAttributes()),
-      onInitCharacter: () => dispatch(actions.initCharacter())
+      onInitCharacter: (token) => dispatch(actions.initCharacter(token))
     }
 }
 
