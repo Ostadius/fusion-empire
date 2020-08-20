@@ -1,5 +1,5 @@
 .NavItems {
-    margin: 40px;
+    margin: 10px;
     padding: 0;
     list-style: none;
     display: flex;
@@ -11,5 +11,6 @@
 @media (min-width: 500px) {
     .NavItems {
         flex-flow: row;
+          height: 100%;
     }
 }

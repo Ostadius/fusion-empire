@@ -1,14 +1,14 @@
 import React from 'react';
 import NavItems from '../NavItems/NavItems';
-import Oak from '../../../assets/elements.png';
+import Elements from '../../../assets/elements.png';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 import classes from './Toolbar.module.css';
 
 const toolBar =(props)=>(
 <header className={classes.Toolbar}>
-<img src={Oak} alt="oak-pic" className={classes.logo} />
 <DrawerToggle clicked={props.drawerToggleClicked} />
-    <nav>
+<img src={Elements} alt="elements-pic" className={classes.logo} />
+    <nav className={classes.DesktopOnly}>
       <NavItems />
     </nav>
 </header>

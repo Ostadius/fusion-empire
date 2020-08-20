@@ -15,13 +15,13 @@ const divID=`${props.id}`
 return(
 
 <div className={classes.miniCharView}>
-<p>{divID}</p> <br/>
-<p>{divEx}</p> <br/>
-<p>{divName}</p><br/>
-<p>{divRace}</p><br/>
-<p>{divJob}</p><br/>
-<p>{divGender}</p><br/>
-<p>{divMoon}</p><br/>
+<p>{divID}</p> 
+<p>{divEx}</p> 
+<p>{divName}</p>
+<p>{divRace}</p>
+<p>{divJob}</p>
+<p>{divGender}</p>
+<p>{divMoon}</p>
 </div>
 )};
 

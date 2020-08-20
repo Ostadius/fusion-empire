@@ -18,7 +18,7 @@
     color: #40A4C8;
 }
 
-@media (max-width: 499px) {
+@media (max-width: 450px) {
   .NavItem{
     display:none;
   }
